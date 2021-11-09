@@ -4,11 +4,14 @@ def get_heavy_quote():
     return random.choice(heavy)
 
 
-heavy = ["Cry some more!", 
-         "Weeeeeeeh! Waaaaaaaaaahh!",
-         "Maniacal laugh", 
-         "I'm coming for you!",
-         "I'm coming for you!",
-         "Keep crying, baby!",
-         "All of you are babies!",
+heavy = ["Get behind me doctor!",
+         "Little little man.",
+         "Do you remember me now?!",
+         "I am angry!",
+         "Ha ha ha ha! Heavy is back babies!",
+         "Who. Touched. My. Gun.",
+         "Get behind pretty pink pony mane, Doctor!",
+         "Run, cowards! Tweet tweet tweeeet!",
+         "Shh... Sasha is asleep."
         ]
+
