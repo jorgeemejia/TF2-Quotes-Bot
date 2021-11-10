@@ -1,9 +1,13 @@
 import discord
+from discord.channel import VoiceChannel
 from discord.ext import commands
 
 import os
 from dotenv import load_dotenv
 
+import youtube_dl
+
+import scout
 from scout import get_scout_quote
 from heavy import get_heavy_quote
 from demo_man import get_demo_man_quote
@@ -32,7 +36,37 @@ async def scout(ctx):
     if ctx.author == client.user:
         return
     else:
-        await ctx.channel.send(get_scout_quote())
+        quote = get_scout_quote()
+        await ctx.channel.send(quote)
+        #print(scout[quote])
+        song_there = os.path.isfile("audio.mp3")
+        try:
+            if song_there:
+                os.remove("audio.mp3")
+        except PermissionError:
+            await ctx.send("Wait for the current playing audio to end")
+            return
+
+        voiceChannel = discord.utils.get(ctx.guild.voice_channels, name = 'General')
+        await voiceChannel.connect()
+        voice = discord.utils.get(client.voice_clients, guild = ctx.guild )
+        
+      
+        
+        ydl_opts = {
+            'format' : 'bestaudio/best',
+            'postprocessors' : [{
+                'key': 'FFmpegExtractAudio',
+                'preferredcodec' : 'mp3',
+                'preferredquality' : '192'
+            }],
+        }
+        with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+            ydl.download(["https://www.youtube.com/watch?v=1i3svP-Kp94"])
+        for file in os.listdir("./"):
+            if file.endswith(".mp3"):
+                os.rename(file, "audio.mp3")
+        voice.play(discord.FFmpegPCMAudio("audio.mp3"))
 
 @client.command()
 async def heavy(ctx):
@@ -44,7 +78,7 @@ async def heavy(ctx):
 
 @client.command()
 async def demo_man(ctx):
-    """Prints a random heavy quote"""
+    """Prints a random demo_man quote"""
     if ctx.author == client.user:
         return
     else:
@@ -52,7 +86,7 @@ async def demo_man(ctx):
 
 @client.command()
 async def engineer(ctx):
-    """Prints a random heavy quote"""
+    """Prints a random engineer quote"""
     if ctx.author == client.user:
         return
     else:
@@ -60,7 +94,7 @@ async def engineer(ctx):
 
 @client.command()
 async def medic(ctx):
-    """Prints a random heavy quote"""
+    """Prints a random medic quote"""
     if ctx.author == client.user:
         return
     else:
@@ -68,7 +102,7 @@ async def medic(ctx):
 
 @client.command()
 async def pyro(ctx):
-    """Prints a random heavy quote"""
+    """Prints a random pyro quote"""
     if ctx.author == client.user:
         return
     else:
@@ -76,7 +110,7 @@ async def pyro(ctx):
 
 @client.command()
 async def sniper(ctx):
-    """Prints a random heavy quote"""
+    """Prints a random sniper quote"""
     if ctx.author == client.user:
         return
     else:
@@ -84,7 +118,7 @@ async def sniper(ctx):
 
 @client.command()
 async def soldier(ctx):
-    """Prints a random heavy quote"""
+    """Prints a random soldier quote"""
     if ctx.author == client.user:
         return
     else:
@@ -92,7 +126,7 @@ async def soldier(ctx):
 
 @client.command()
 async def spy(ctx):
-    """Prints a random heavy quote"""
+    """Prints a random spy quote"""
     if ctx.author == client.user:
         return
     else:
