@@ -1,11 +1,15 @@
 import random
 
 def get_scout_quote():
-    keys = list(scout.keys())
+    keys = list(scout_dict.keys())
     return random.choice(keys)
 
+def get_scout_quote_url(quote):
+    return scout_dict[quote]
 
-scout = {"Screw you, Death" : "https://www.youtube.com/watch?v=1i3svP-Kp94",
+
+
+scout_dict = {"Screw you, Death" : "https://www.youtube.com/watch?v=1i3svP-Kp94",
          "Yeah, I dare ya, rage quit. C'mon make us both happy." : "https://www.youtube.com/watch?v=EgjpSnXmPD4",
          "We did it, Scary Hat! We did it because we're best friends." : "https://www.youtube.com/watch?v=jeiqUlL5ZIo",
          "You're like a car crash in slow motion. It's like I'm watchin' ya fly through a windshield" : "https://www.youtube.com/watch?v=Vc6yQ9GO5e0",
@@ -17,6 +21,9 @@ scout = {"Screw you, Death" : "https://www.youtube.com/watch?v=1i3svP-Kp94",
         }
 
 
+
+# for key in scout_dict.keys():
+#     print(scout_dict[key])
 
 # keys = list(scout.keys())
 

@@ -7,10 +7,9 @@ from dotenv import load_dotenv
 
 import youtube_dl
 
-import scout
-from scout import get_scout_quote
+from scout import get_scout_quote_url, get_scout_quote
 from heavy import get_heavy_quote
-from demo_man import get_demo_man_quote
+from demo_man import get_demo_man_quote, get_demo_man_quote_url
 from engineer import get_engineer_quote
 from medic import get_medic_quote
 from pyro import get_pyro_quote
@@ -38,7 +37,7 @@ async def scout(ctx):
     else:
         quote = get_scout_quote()
         await ctx.channel.send(quote)
-        #print(scout[quote])
+        url = get_scout_quote_url(quote)
         song_there = os.path.isfile("audio.mp3")
         try:
             if song_there:
@@ -62,7 +61,7 @@ async def scout(ctx):
             }],
         }
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-            ydl.download(["https://www.youtube.com/watch?v=1i3svP-Kp94"])
+            ydl.download([url])
         for file in os.listdir("./"):
             if file.endswith(".mp3"):
                 os.rename(file, "audio.mp3")
@@ -82,7 +81,37 @@ async def demo_man(ctx):
     if ctx.author == client.user:
         return
     else:
-        await ctx.channel.send(get_demo_man_quote())
+        quote = get_demo_man_quote()
+        await ctx.channel.send(quote)
+        url = get_demo_man_quote_url(quote)
+        song_there = os.path.isfile("audio.mp3")
+        try:
+            if song_there:
+                os.remove("audio.mp3")
+        except PermissionError:
+            await ctx.send("Wait for the current playing audio to end")
+            return
+
+        voiceChannel = discord.utils.get(ctx.guild.voice_channels, name = 'General')
+        await voiceChannel.connect()
+        voice = discord.utils.get(client.voice_clients, guild = ctx.guild )
+        
+      
+        
+        ydl_opts = {
+            'format' : 'bestaudio/best',
+            'postprocessors' : [{
+                'key': 'FFmpegExtractAudio',
+                'preferredcodec' : 'mp3',
+                'preferredquality' : '192'
+            }],
+        }
+        with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+            ydl.download([url])
+        for file in os.listdir("./"):
+            if file.endswith(".mp3"):
+                os.rename(file, "audio.mp3")
+        voice.play(discord.FFmpegPCMAudio("audio.mp3"))
 
 @client.command()
 async def engineer(ctx):
