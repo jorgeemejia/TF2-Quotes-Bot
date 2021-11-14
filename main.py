@@ -1,5 +1,6 @@
 import discord
 from discord.channel import VoiceChannel
+from discord.errors import ClientException
 from discord.ext import commands
 
 import os
@@ -47,7 +48,10 @@ async def scout(ctx):
             return
 
         voiceChannel = discord.utils.get(ctx.guild.voice_channels, name = 'General')
-        await voiceChannel.connect()
+        try:
+            await voiceChannel.connect()
+        except ClientException:
+            pass
         voice = discord.utils.get(client.voice_clients, guild = ctx.guild )
         
       
@@ -93,7 +97,10 @@ async def demo_man(ctx):
             return
 
         voiceChannel = discord.utils.get(ctx.guild.voice_channels, name = 'General')
-        await voiceChannel.connect()
+        try:
+            await voiceChannel.connect()
+        except ClientException:
+            pass
         voice = discord.utils.get(client.voice_clients, guild = ctx.guild )
         
       
