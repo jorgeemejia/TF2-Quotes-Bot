@@ -17,7 +17,17 @@ scout_dict = {"Screw you, Death" : "https://www.youtube.com/watch?v=1i3svP-Kp94"
          "It's happening! Oh God! It's happening!":"https://www.youtube.com/watch?v=X89NTUwWiE0" ,
          "I love my ball!" : "https://www.youtube.com/watch?v=CmWE9w_pAX0" ,
          "Ya head's a freakin' bat magnet!" : "https://www.youtube.com/watch?v=m2dka39Pios" ,
-         "I love this game!" : "https://www.youtube.com/watch?v=iRrkg2OCis4"
+         "I love this game!" : "https://www.youtube.com/watch?v=iRrkg2OCis4",
+         "Oh, dat's a skull fracture for sure!" : "https://www.youtube.com/watch?v=t6lYCUMGktc",
+         "Did we win another one of these? Oh man, we are so good!" : "https://www.youtube.com/watch?v=Nj34YBXP_iA",
+         "Wait, wait. Something beats rock?" : "https://www.youtube.com/watch?v=mkvDEZF9JLQ",
+         "Gotta dance, I gotta dance!" : "https://www.youtube.com/watch?v=Q83sinuMyDg",
+         "I'm dying here!" : "https://www.youtube.com/watch?v=sYGfzCBD7mo",
+         "Are you freakin' kidding me?" : "https://www.youtube.com/watch?v=bJw_wcYh8lE",
+         "Ya like that, chucklenuts?" : "https://www.youtube.com/watch?v=0RQdmoRhT6k",
+         "Diagnosis: you suck!" : "https://www.youtube.com/watch?v=3_urjWZ3KcA",
+         "I love winnin'! Love it!" : "https://www.youtube.com/watch?v=Kl3uEZUhxSw"
+
         }
 
 
