@@ -37,16 +37,16 @@ async def scout(ctx):
         return
     else:
         quote = get_scout_quote()
-        await ctx.channel.send(quote)
+        
         url = get_scout_quote_url(quote)
         song_there = os.path.isfile("audio.mp3")
         try:
             if song_there:
                 os.remove("audio.mp3")
         except PermissionError:
-            await ctx.send("Wait for the current playing audio to end")
+            await ctx.send("Wait for the current playing audio to end!")
             return
-
+        await ctx.channel.send(quote)
         voiceChannel = discord.utils.get(ctx.guild.voice_channels, name = 'General')
         try:
             await voiceChannel.connect()
@@ -78,16 +78,15 @@ async def heavy(ctx):
         return
     else:
         quote = get_heavy_quote()
-        await ctx.channel.send(quote)
         url = get_heavy_quote_url(quote)
         song_there = os.path.isfile("audio.mp3")
         try:
             if song_there:
                 os.remove("audio.mp3")
         except PermissionError:
-            await ctx.send("Wait for the current playing audio to end")
+            await ctx.send("Wait for the current playing audio to end!")
             return
-
+        await ctx.channel.send(quote)
         voiceChannel = discord.utils.get(ctx.guild.voice_channels, name = 'General')
         try:
             await voiceChannel.connect()
@@ -119,16 +118,15 @@ async def demo_man(ctx):
         return
     else:
         quote = get_demo_man_quote()
-        await ctx.channel.send(quote)
         url = get_demo_man_quote_url(quote)
         song_there = os.path.isfile("audio.mp3")
         try:
             if song_there:
                 os.remove("audio.mp3")
         except PermissionError:
-            await ctx.send("Wait for the current playing audio to end")
+            await ctx.send("Wait for the current playing audio to end!")
             return
-
+        await ctx.channel.send(quote)
         voiceChannel = discord.utils.get(ctx.guild.voice_channels, name = 'General')
         try:
             await voiceChannel.connect()
@@ -160,16 +158,15 @@ async def engineer(ctx):
         return
     else:
         quote = get_engineer_quote()
-        await ctx.channel.send(quote)
         url = get_engineer_quote_url(quote)
         song_there = os.path.isfile("audio.mp3")
         try:
             if song_there:
                 os.remove("audio.mp3")
         except PermissionError:
-            await ctx.send("Wait for the current playing audio to end")
+            await ctx.send("Wait for the current playing audio to end!")
             return
-
+        await ctx.channel.send(quote)
         voiceChannel = discord.utils.get(ctx.guild.voice_channels, name = 'General')
         try:
             await voiceChannel.connect()
@@ -201,16 +198,15 @@ async def medic(ctx):
         return
     else:
         quote = get_medic_quote()
-        await ctx.channel.send(quote)
         url = get_medic_quote_url(quote)
         song_there = os.path.isfile("audio.mp3")
         try:
             if song_there:
                 os.remove("audio.mp3")
         except PermissionError:
-            await ctx.send("Wait for the current playing audio to end")
+            await ctx.send("Wait for the current playing audio to end!")
             return
-
+        await ctx.channel.send(quote)
         voiceChannel = discord.utils.get(ctx.guild.voice_channels, name = 'General')
         try:
             await voiceChannel.connect()
@@ -242,16 +238,15 @@ async def pyro(ctx):
         return
     else:
         quote = get_pyro_quote()
-        await ctx.channel.send(quote)
         url = get_pyro_quote_url(quote)
         song_there = os.path.isfile("audio.mp3")
         try:
             if song_there:
                 os.remove("audio.mp3")
         except PermissionError:
-            await ctx.send("Wait for the current playing audio to end")
+            await ctx.send("Wait for the current playing audio to end!")
             return
-
+        await ctx.channel.send(quote)
         voiceChannel = discord.utils.get(ctx.guild.voice_channels, name = 'General')
         try:
             await voiceChannel.connect()
@@ -282,17 +277,16 @@ async def sniper(ctx):
     if ctx.author == client.user:
         return
     else:
-        quote = get_sniper_quote()
-        await ctx.channel.send(quote)  
+        quote = get_sniper_quote() 
         url = get_sniper_quote_url(quote)
         song_there = os.path.isfile("audio.mp3")
         try:
             if song_there:
                 os.remove("audio.mp3")
         except PermissionError:
-            await ctx.send("Wait for the current playing audio to end")
+            await ctx.send("Wait for the current playing audio to end!")
             return
-
+        await ctx.channel.send(quote)
         voiceChannel = discord.utils.get(ctx.guild.voice_channels, name = 'General')
         try:
             await voiceChannel.connect()
@@ -365,16 +359,15 @@ async def spy(ctx):
         return
     else:
         quote = get_spy_quote()
-        await ctx.channel.send(quote)
         url = get_spy_quote_url(quote)
         song_there = os.path.isfile("audio.mp3")
         try:
             if song_there:
                 os.remove("audio.mp3")
         except PermissionError:
-            await ctx.send("Wait for the current playing audio to end")
+            await ctx.send("Wait for the current playing audio to end!")
             return
-
+        await ctx.channel.send(quote)
         voiceChannel = discord.utils.get(ctx.guild.voice_channels, name = 'General')
         try:
             await voiceChannel.connect()
