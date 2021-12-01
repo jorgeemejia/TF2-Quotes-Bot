@@ -9,3 +9,4 @@ TF2 Talks is a Discord bot that when prompted, writes and says a quote from Valv
 * Choose A Random One Or Pick One From The List!
 
 # Installation
+Invite TF2 Talks to your server using this link :
