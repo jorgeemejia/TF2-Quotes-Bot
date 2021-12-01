@@ -2,7 +2,7 @@
 # TF2 Talks
 
 # Overview
-__TF2__ Talks is a Discord bot that when prompted, writes and says a quote from Valves cult-classic first-person shooter, __Team Fortress 2__!
+__TF2 Talks__ is a Discord bot that when prompted, writes and says a quote from Valves cult-classic first-person shooter, __Team Fortress 2__!
 
 * Over 600 Quotes!
 * Quotes Available For all 9 Classes!
