@@ -112,12 +112,20 @@ async def heavy(ctx):
         voice.play(discord.FFmpegPCMAudio("audio.mp3"))
 
 @client.command()
-async def demo_man(ctx):
+async def demo_man(ctx, *arg: int):
     """Prints a random demo_man quote"""
     if ctx.author == client.user:
         return
     else:
-        quote = get_demo_man_quote()
+        # print(f"%%%%%%%%%%%%%%{arg}%%%%%%%%%")
+        # print(f"%%%%%%%%%%%%%%{arg[0]}%%%%%%%%%")
+        # print(f"%%%%%%%%%%%%%%{type(arg[0])}%%%%%%%%%")
+        # print(f"%%%%%%%%%%%%%%{num}%%%%%%%%%")
+        if arg:
+            num = arg[0]
+            quote = get_demo_man_quote(num)
+        else:
+            quote = get_demo_man_quote()
         url = get_demo_man_quote_url(quote)
         song_there = os.path.isfile("audio.mp3")
         try:
