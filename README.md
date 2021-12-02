@@ -1,2 +1,12 @@
-# TF2-Quotes-Bot
-Discord bot that when prompted, responds with a quote from Team Fortress 2
+![](images/tf2.jpg)
+# TF2 Talks
+
+# Overview
+__TF2 Talks__ is a Discord bot that when prompted, writes and says a quote from Valves cult-classic first-person shooter, __Team Fortress 2__!
+
+* Over 600 Quotes!
+* Quotes Available For all 9 Classes!
+* Choose A Random One Or Pick One From The List!
+
+# Installation
+Invite TF2 Talks to your server using this link :
