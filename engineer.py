@@ -1,13 +1,21 @@
 import random
 
-def get_engineer_quote():
-    keys = list(engineer_dict.keys())
-    return random.choice(keys)
+def get_engineer_quote(*arg):
+    keys = list(dict.keys())
+    if arg:
+        return(keys[arg[0]])
+    else:
+        return random.choice(keys)
 
 def get_engineer_quote_url(quote):
-    return engineer_dict[quote]
+    return dict[quote]
 
-engineer_dict = {"You are a coward and a scoundrel!" : "https://www.youtube.com/watch?v=wO9Ch3AHwRs",
+def print_engineer_list():
+    keys = list(dict.keys())
+    for (i, item) in enumerate(keys, start = 0):
+        print(i, item)
+
+dict = {"You are a coward and a scoundrel!" : "https://www.youtube.com/watch?v=wO9Ch3AHwRs",
             "Not bad. Not bad at all.": "https://www.youtube.com/watch?v=wBtKmgHWt64",
             "Whoo, look at all that money." : "https://www.youtube.com/watch?v=4RkX_-0-eRs",
             "Job well done." : "https://www.youtube.com/watch?v=WTse28OS3qA",
@@ -60,7 +68,7 @@ engineer_dict = {"You are a coward and a scoundrel!" : "https://www.youtube.com/
             'Dominated, corn cakes.':"https://www.youtube.com/watch?v=vznP1D7iuDo",
             'Come on, fellas!':"https://www.youtube.com/watch?v=MPiBwEislEc",
             "Y'all just got dominated, city boy.":"https://www.youtube.com/watch?v=qjYY4KOPPAk",
-            "I've seen better sides of beef, been run over by a combine.":"https://www.youtube.com/watch?v=yCAoaATAZLE",
+            #"I've seen better sides of beef, been run over by a combine.":"https://www.youtube.com/watch?v=yCAoaATAZLE",
             'Okay body, time to Teleport you to a world of physical fitness!':"https://www.youtube.com/watch?v=YQeJyJ_UtVc",
             '*drinking*. Aaaah, life of Reilly! Mmm.':"https://www.youtube.com/watch?v=U21xfZdP9wk",
             'Stupid face.':"https://www.youtube.com/watch?v=4NqHV1BpQHQ",

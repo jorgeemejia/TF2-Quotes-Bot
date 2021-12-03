@@ -1,25 +1,21 @@
 import random
 
 def get_demo_man_quote(*arg):
-    keys = list(demo_man_dict.keys())
+    keys = list(dict.keys())
     if arg:
         return(keys[arg[0]])
     else:
         return random.choice(keys)
 
 def get_demo_man_quote_url(quote):
-    return demo_man_dict[quote]
+    return dict[quote]
 
 def print_demo_man_list():
-    keys = list(demo_man_dict.keys())
-    # num = 0
-    # for key in keys:
-    #     print(f'{num}, {key}')
-    #     num += 1
+    keys = list(dict.keys())
     for (i, item) in enumerate(keys, start = 0):
         print(i, item)
 
-demo_man_dict = {"Yer a back-pokin' snake, and by God you'll die like one!" : "https://www.youtube.com/watch?v=jYkMJp8YUes",
+dict = {"Yer a back-pokin' snake, and by God you'll die like one!" : "https://www.youtube.com/watch?v=jYkMJp8YUes",
         "You're weak. I'm strong. and I win, toymaker!" : "https://www.youtube.com/watch?v=gngfYEuEbFI",
         "I almost joined their bloody team!" : "https://www.youtube.com/watch?v=YfxJA-ObKsg",
         "Time to get bluttered!" : "https://www.youtube.com/watch?v=FAFnPJbebZU",
@@ -97,7 +93,7 @@ demo_man_dict = {"Yer a back-pokin' snake, and by God you'll die like one!" : "h
         }
 
 
-# print_demo_man_list()
+#print_demo_man_list()
 
 # print(get_demo_man_quote(1))
 

@@ -1,14 +1,22 @@
 import random
 
-def get_soldier_quote():
-    keys = list(soldier_dict.keys())
-    return random.choice(keys)
+def get_soldier_quote(*arg):
+    keys = list(dict.keys())
+    if arg:
+        return(keys[arg[0]])
+    else:
+        return random.choice(keys)
 
 def get_soldier_quote_url(quote):
-    return soldier_dict[quote]
+    return dict[quote]
+
+def print_soldier_list():
+    keys = list(dict.keys())
+    for (i, item) in enumerate(keys, start = 0):
+        print(i, item)
 
 
-soldier_dict = {'A big mug of my foot up your ass!': "https://www.youtube.com/watch?v=fwyQl_YUwnc",
+dict = {'A big mug of my foot up your ass!': "https://www.youtube.com/watch?v=fwyQl_YUwnc",
             "Thanks, soldier." : "https://www.youtube.com/watch?v=6Hj5rC4snqw",
             "You were loud and ugly and now you're DEAD! Amen." : "https://www.youtube.com/watch?v=eKbcTbQIMqc",
             "You were good son, real good; maybe even the best." : "https://www.youtube.com/watch?v=jaQnQ17s4AQ",

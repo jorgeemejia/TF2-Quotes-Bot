@@ -1,13 +1,21 @@
 import random 
 
-def get_sniper_quote():
-    keys = list(sniper_dict.keys())
-    return random.choice(keys)
+def get_sniper_quote(*arg):
+    keys = list(dict.keys())
+    if arg:
+        return(keys[arg[0]])
+    else:
+        return random.choice(keys)
 
 def get_sniper_quote_url(quote):
-    return sniper_dict[quote]
+    return dict[quote]
 
-sniper_dict = {"You're making this so easy, I'm actually getting worse." : "https://www.youtube.com/watch?v=4SH45dwczZA",
+def print_sniper_list():
+    keys = list(dict.keys())
+    for (i, item) in enumerate(keys, start = 0):
+        print(i, item)
+
+dict = {"You're making this so easy, I'm actually getting worse." : "https://www.youtube.com/watch?v=4SH45dwczZA",
           "Now this is a knife!" : "https://www.youtube.com/watch?v=f_M9va9Ozng",
           "I see ya." : "https://www.youtube.com/watch?v=6C5dRpBnf3Q",
           "Fine shot, mate!" : "https://www.youtube.com/watch?v=C_UMjobugxM",
@@ -27,7 +35,7 @@ sniper_dict = {"You're making this so easy, I'm actually getting worse." : "http
           "Huhbluhbluhbluhbluhbluh! Bloody hell!":'https://www.youtube.com/watch?v=gC6-wWLr6CM',
           "Yeah, that seems about right!":'https://www.youtube.com/watch?v=hbvEX4b2WOQ',
           "Wave goodbye to your head, wanker." :'https://www.youtube.com/watch?v=3HG3iEPQp54',
-          "Piss off, big-head!" :'https://www.youtube.com/watch?v=-mFwP41VCaU',
+          #"Piss off, big-head!" :'https://www.youtube.com/watch?v=-mFwP41VCaU',
           "It's a miracle. It's an Australian Christmas bloody miracle!":'https://www.youtube.com/watch?v=6rpCNKUNGXc',
           "Help me pin this down!":'https://www.youtube.com/watch?v=d0FXxaDJuEE',
           "You got a forehead on ya like a coffee table.":'https://www.youtube.com/watch?v=Z7aD_aPRGSE',

@@ -1,14 +1,22 @@
 import random
 
 
-def get_heavy_quote():
-    keys = list(heavy_dict.keys())
-    return random.choice(keys)
+def get_heavy_quote(*arg):
+    keys = list(dict.keys())
+    if arg:
+        return(keys[arg[0]])
+    else:
+        return random.choice(keys)
 
 def get_heavy_quote_url(quote):
-    return heavy_dict[quote]
+    return dict[quote]
 
-heavy_dict = {"Get behind me doctor!" : "https://www.youtube.com/watch?v=7duMsdAtrO8",
+def print_heavy_list():
+    keys = list(dict.keys())
+    for (i, item) in enumerate(keys, start = 0):
+        print(i, item)
+
+dict = {"Get behind me doctor!" : "https://www.youtube.com/watch?v=7duMsdAtrO8",
          "Little little man." : "https://www.youtube.com/watch?v=MG3v3_ahd3Q",
          "Do you remember me now?!": "https://www.youtube.com/watch?v=B_eX15hz_Is",
          "I am angry!" : "https://www.youtube.com/watch?v=UNEubxOT-5E",

@@ -1,13 +1,21 @@
 import random
 
-def get_medic_quote():
-    keys = list(medic_dict.keys())
-    return random.choice(keys)
+def get_medic_quote(*arg):
+    keys = list(dict.keys())
+    if arg:
+        return(keys[arg[0]])
+    else:
+        return random.choice(keys)
 
 def get_medic_quote_url(quote):
-    return medic_dict[quote]
+    return dict[quote]
 
-medic_dict = {"Ze healing is not as revarding as ze hurting." : "https://www.youtube.com/watch?v=EGmHVNLDxFw",
+def print_medic_list():
+    keys = list(dict.keys())
+    for (i, item) in enumerate(keys, start = 0):
+        print(i, item)
+
+dict = {"Ze healing is not as revarding as ze hurting." : "https://www.youtube.com/watch?v=EGmHVNLDxFw",
          "Zat vas doktor-assisted homicide!" : "https://www.youtube.com/watch?v=L-BctkSZLJ8",
          "Eins, zwei, drei... Ugh, I do not think ve brought enough body bags." : "https://www.youtube.com/watch?v=wYkIrbNuZ3A", 
          "I can't take any more of zis insanity!": "https://www.youtube.com/watch?v=0DJHFIRAqgI",

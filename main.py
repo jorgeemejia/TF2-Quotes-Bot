@@ -31,13 +31,16 @@ async def on_ready():
 
 
 @client.command()
-async def scout(ctx):
+async def scout(ctx, *arg: int):
     """Prints a random scout quote"""
     if ctx.author == client.user:
         return
     else:
-        quote = get_scout_quote()
-        
+        if arg:
+            num = arg[0]
+            quote = get_scout_quote(num)
+        else:
+            quote = get_scout_quote()
         url = get_scout_quote_url(quote)
         song_there = os.path.isfile("audio.mp3")
         try:
@@ -72,12 +75,16 @@ async def scout(ctx):
         voice.play(discord.FFmpegPCMAudio("audio.mp3"))
 
 @client.command()
-async def heavy(ctx):
+async def heavy(ctx, *arg: int ):
     """Prints a random heavy quote"""
     if ctx.author == client.user:
         return
     else:
-        quote = get_heavy_quote()
+        if arg:
+            num = arg[0]
+            quote = get_heavy_quote(num)
+        else:
+            quote = get_heavy_quote()
         url = get_heavy_quote_url(quote)
         song_there = os.path.isfile("audio.mp3")
         try:
@@ -160,12 +167,16 @@ async def demo_man(ctx, *arg: int):
         voice.play(discord.FFmpegPCMAudio("audio.mp3"))
 
 @client.command()
-async def engineer(ctx):
+async def engineer(ctx, *arg: int):
     """Prints a random engineer quote"""
     if ctx.author == client.user:
         return
     else:
-        quote = get_engineer_quote()
+        if arg:
+            num = arg[0]
+            quote = get_engineer_quote(num)
+        else:
+            quote = get_engineer_quote()
         url = get_engineer_quote_url(quote)
         song_there = os.path.isfile("audio.mp3")
         try:
@@ -200,12 +211,16 @@ async def engineer(ctx):
         voice.play(discord.FFmpegPCMAudio("audio.mp3"))
 
 @client.command()
-async def medic(ctx):
+async def medic(ctx, *arg: int):
     """Prints a random medic quote"""
     if ctx.author == client.user:
         return
     else:
-        quote = get_medic_quote()
+        if arg:
+            num = arg[0]
+            quote = get_medic_quote(num)
+        else:
+            quote = get_medic_quote()
         url = get_medic_quote_url(quote)
         song_there = os.path.isfile("audio.mp3")
         try:
@@ -240,12 +255,16 @@ async def medic(ctx):
         voice.play(discord.FFmpegPCMAudio("audio.mp3"))
 
 @client.command()
-async def pyro(ctx):
+async def pyro(ctx, *arg: int):
     """Prints a random pyro quote"""
     if ctx.author == client.user:
         return
     else:
-        quote = get_pyro_quote()
+        if arg:
+            num = arg[0]
+            quote = get_pyro_quote(num)
+        else:
+            quote = get_pyro_quote()
         url = get_pyro_quote_url(quote)
         song_there = os.path.isfile("audio.mp3")
         try:
@@ -280,12 +299,16 @@ async def pyro(ctx):
         voice.play(discord.FFmpegPCMAudio("audio.mp3"))
 
 @client.command()
-async def sniper(ctx):
+async def sniper(ctx, *arg: int):
     """Prints a random sniper quote"""
     if ctx.author == client.user:
         return
     else:
-        quote = get_sniper_quote() 
+        if arg:
+            num = arg[0]
+            quote = get_sniper_quote(num)
+        else:
+            quote = get_sniper_quote()
         url = get_sniper_quote_url(quote)
         song_there = os.path.isfile("audio.mp3")
         try:
@@ -320,13 +343,16 @@ async def sniper(ctx):
         voice.play(discord.FFmpegPCMAudio("audio.mp3"))
 
 @client.command()
-async def soldier(ctx):
+async def soldier(ctx, *arg: int):
     """Prints a random soldier quote"""
     if ctx.author == client.user:
         return
     else:
-        quote = get_soldier_quote()
-        await ctx.channel.send(quote) 
+        if arg:
+            num = arg[0]
+            quote = get_soldier_quote(num)
+        else:
+            quote = get_soldier_quote() 
         url = get_soldier_quote_url(quote)
         song_there = os.path.isfile("audio.mp3")
         try:
@@ -335,7 +361,7 @@ async def soldier(ctx):
         except PermissionError:
             await ctx.send("Wait for the current playing audio to end")
             return
-
+        await ctx.channel.send(quote)
         voiceChannel = discord.utils.get(ctx.guild.voice_channels, name = 'General')
         try:
             await voiceChannel.connect()
@@ -361,12 +387,16 @@ async def soldier(ctx):
         voice.play(discord.FFmpegPCMAudio("audio.mp3"))
 
 @client.command()
-async def spy(ctx):
+async def spy(ctx, *arg: int):
     """Prints a random spy quote"""
     if ctx.author == client.user:
         return
     else:
-        quote = get_spy_quote()
+        if arg:
+            num = arg[0]
+            quote = get_spy_quote(num)
+        else:
+            quote = get_spy_quote()
         url = get_spy_quote_url(quote)
         song_there = os.path.isfile("audio.mp3")
         try:

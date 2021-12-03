@@ -1,15 +1,22 @@
 import random
 
 
-def get_spy_quote():
-    keys = list(spy_dict.keys())
-    return random.choice(keys)
+def get_spy_quote(*arg):
+    keys = list(dict.keys())
+    if arg:
+        return(keys[arg[0]])
+    else:
+        return random.choice(keys)
 
 def get_spy_quote_url(quote):
-    return spy_dict[quote]
+    return dict[quote]
 
+def print_spy_list():
+    keys = list(dict.keys())
+    for (i, item) in enumerate(keys, start = 0):
+        print(i, item)
 
-spy_dict = {"You imbecile! You've doomed us all!" : "https://www.youtube.com/watch?v=4ZPDpTwoQKQ",
+dict = {"You imbecile! You've doomed us all!" : "https://www.youtube.com/watch?v=4ZPDpTwoQKQ",
        "My appreciation, amigo." : "https://www.youtube.com/watch?v=M-ioiw5t1dE",
        "I appreciate your help." : "https://www.youtube.com/watch?v=6AAyTYKz4BY",
        "Coward!" : "https://www.youtube.com/watch?v=9xWNyTwodXE",
