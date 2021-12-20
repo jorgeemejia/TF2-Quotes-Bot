@@ -10,10 +10,25 @@ def get_medic_quote(*arg):
 def get_medic_quote_url(quote):
     return dict[quote]
 
+# def print_medic_list():
+#     keys = list(dict.keys())
+#     for (i, item) in enumerate(keys, start = 0):
+#         print(i, item)
+
 def print_medic_list():
+    num = 0
+    words = ""
     keys = list(dict.keys())
-    for (i, item) in enumerate(keys, start = 0):
-        print(i, item)
+    for key in keys:
+        word_num = str(num)
+        words += '['
+        words += word_num
+        words += ']'
+        words += " "
+        words += key
+        words += '\n'
+        num += 1
+    return words
 
 dict = {"Ze healing is not as revarding as ze hurting." : "https://www.youtube.com/watch?v=EGmHVNLDxFw",
          "Zat vas doktor-assisted homicide!" : "https://www.youtube.com/watch?v=L-BctkSZLJ8",

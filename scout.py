@@ -10,10 +10,45 @@ def get_scout_quote(*arg):
 def get_scout_quote_url(quote):
     return dict[quote]
 
-def print_scout_list():
-    keys = list(dict.keys())
-    for (i, item) in enumerate(keys, start = 0):
-        print(i, item)
+# def print_scout_list():
+#     keys = list(dict.keys())
+#     for (i, item) in enumerate(keys, start = 0):
+#         print(i, item)
+
+def print_half_scout_list():
+    num = 0
+    words = ""
+    keys1 = list(dict.keys())
+    actual_keys = keys1[:50]
+    for actual_key in actual_keys:
+        words += '['
+        word_num = str(num)
+        words += word_num
+        words += ']'
+        words += " "
+        words += actual_key
+        if num == 49:
+            pass
+        else:
+            words += '\n'
+        num += 1
+    return words
+
+def print_other_half_scout_list():
+    num = 50
+    words = ""
+    keys2 = list(dict.keys())
+    actual_keys = keys2[50:]
+    for actual_key in actual_keys:
+        words += '['
+        word_num = str(num)
+        words += word_num
+        words += ']'
+        words += " "
+        words += actual_key
+        words += '\n'
+        num += 1
+    return words
 
 
 dict = {"Screw you, Death" : "https://www.youtube.com/watch?v=1i3svP-Kp94",

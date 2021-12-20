@@ -10,10 +10,25 @@ def get_pyro_quote(*arg):
 def get_pyro_quote_url(quote):
     return dict[quote]
 
+# def print_pyro_list():
+#     keys = list(dict.keys())
+#     for (i, item) in enumerate(keys, start = 0):
+#         print(i, item)
+
 def print_pyro_list():
+    num = 0
+    words = ""
     keys = list(dict.keys())
-    for (i, item) in enumerate(keys, start = 0):
-        print(i, item)
+    for key in keys:
+        word_num = str(num)
+        words += '['
+        words += word_num
+        words += ']'
+        words += " "
+        words += key
+        words += '\n'
+        num += 1
+    return words
 
 dict = {"Thanks for the teleporter." : "https://www.youtube.com/watch?v=nbsxrRkTh44",
         "This point is ours!" : "https://www.youtube.com/watch?v=feKQTpvkcN8",

@@ -11,10 +11,45 @@ def get_spy_quote(*arg):
 def get_spy_quote_url(quote):
     return dict[quote]
 
-def print_spy_list():
-    keys = list(dict.keys())
-    for (i, item) in enumerate(keys, start = 0):
-        print(i, item)
+# def print_spy_list():
+#     keys = list(dict.keys())
+#     for (i, item) in enumerate(keys, start = 0):
+#         print(i, item)
+
+def print_half_spy_list():
+    num = 0
+    words = ""
+    keys1 = list(dict.keys())
+    actual_keys = keys1[:30]
+    for actual_key in actual_keys:
+        words += '['
+        word_num = str(num)
+        words += word_num
+        words += ']'
+        words += " "
+        words += actual_key
+        if num == 29:
+            pass
+        else:
+            words += '\n'
+        num += 1
+    return words
+
+def print_other_half_spy_list():
+    num = 30
+    words = ""
+    keys2 = list(dict.keys())
+    actual_keys = keys2[30:]
+    for actual_key in actual_keys:
+        words += '['
+        word_num = str(num)
+        words += word_num
+        words += ']'
+        words += " "
+        words += actual_key
+        words += '\n'
+        num += 1
+    return words
 
 dict = {"You imbecile! You've doomed us all!" : "https://www.youtube.com/watch?v=4ZPDpTwoQKQ",
        "My appreciation, amigo." : "https://www.youtube.com/watch?v=M-ioiw5t1dE",

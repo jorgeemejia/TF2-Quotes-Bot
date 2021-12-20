@@ -8,15 +8,15 @@ from dotenv import load_dotenv
 
 import youtube_dl
 
-from scout import get_scout_quote_url, get_scout_quote
-from heavy import get_heavy_quote_url, get_heavy_quote
+from scout import get_scout_quote_url, get_scout_quote, print_half_scout_list, print_other_half_scout_list
+from heavy import get_heavy_quote_url, get_heavy_quote, print_half_heavy_list, print_other_half_heavy_list
 from demo_man import get_demo_man_quote, get_demo_man_quote_url, print_half_demo_man_list, print_other_half_demo_man_list
-from engineer import get_engineer_quote_url, get_engineer_quote
-from medic import get_medic_quote_url, get_medic_quote
-from pyro import get_pyro_quote_url, get_pyro_quote
-from sniper import get_sniper_quote_url, get_sniper_quote
-from soldier import get_soldier_quote_url, get_soldier_quote
-from spy import get_spy_quote_url, get_spy_quote
+from engineer import get_engineer_quote_url, get_engineer_quote, print_engineer_list
+from medic import get_medic_quote_url, get_medic_quote, print_medic_list
+from pyro import get_pyro_quote_url, get_pyro_quote, print_pyro_list
+from sniper import get_sniper_quote_url, get_sniper_quote, print_half_sniper_list, print_other_half_sniper_list
+from soldier import get_soldier_quote_url, get_soldier_quote, print_half_soldier_list, print_other_half_soldier_list, print_last_half_soldier_list
+from spy import get_spy_quote_url, get_spy_quote, print_half_spy_list, print_other_half_spy_list
 
 #client = discord.Client()
 
@@ -433,22 +433,61 @@ async def spy(ctx, *arg: int):
 @client.command()
 async def list (ctx, arg):
     if arg == 'demo_man':
-        #word = print_demo_man_list()
         first_half = print_half_demo_man_list()
         second_half = print_other_half_demo_man_list()
         await ctx.channel.send(first_half)
         await ctx.channel.send(second_half)
-        #await ctx.channel.send('```demo_man```')
 
-# #     elif arg == 'engineer':
+    elif arg == 'engineer':
+        txt = print_engineer_list()
+        await ctx.channel.send(txt)
 
-# #     elif arg == 'heavy':
 
-# #     elif arg == 'medic':
+    elif arg == 'heavy':
+        first_half = print_half_heavy_list()
+        second_half = print_other_half_heavy_list()
+        await ctx.channel.send(first_half)
+        await ctx.channel.send(second_half)
 
-# #     elif arg == 'pyro':
+    elif arg == 'medic':
+        txt = print_medic_list()
+        await ctx.channel.send(txt)
 
-# #     elif arg == 'scout':
+
+    elif arg == 'pyro':
+        txt = print_pyro_list()
+        await ctx.channel.send(txt)
+
+    elif arg == 'scout':
+        first_half = print_half_scout_list()
+        second_half = print_other_half_scout_list()
+        await ctx.channel.send(first_half)
+        await ctx.channel.send(second_half)
+
+    elif arg == 'sniper':
+        first_half = print_half_sniper_list()
+        second_half = print_other_half_sniper_list()
+        await ctx.channel.send(first_half)
+        await ctx.channel.send(second_half)
+
+    elif arg == 'soldier':
+        first_half = print_half_soldier_list()
+        second_half = print_other_half_soldier_list()
+        third_half = print_last_half_soldier_list()
+        await ctx.channel.send(first_half)
+        await ctx.channel.send(second_half)
+        await ctx.channel.send(third_half)
+
+    elif arg == 'spy':
+        first_half = print_half_spy_list()
+        second_half = print_other_half_spy_list()
+        await ctx.channel.send(first_half)
+        await ctx.channel.send(second_half)
+
+    else:
+        pass
+
+
 
 ##use for loop and concatenate everything + \n
 

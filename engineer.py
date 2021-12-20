@@ -10,10 +10,26 @@ def get_engineer_quote(*arg):
 def get_engineer_quote_url(quote):
     return dict[quote]
 
+# def print_engineer_list():
+#     keys = list(dict.keys())
+#     for (i, item) in enumerate(keys, start = 0):
+#         print(i, item)
+
 def print_engineer_list():
+    num = 0
+    words = ""
     keys = list(dict.keys())
-    for (i, item) in enumerate(keys, start = 0):
-        print(i, item)
+    for key in keys:
+        word_num = str(num)
+        words += '['
+        words += word_num
+        words += ']'
+        words += " "
+        words += key
+        words += '\n'
+        num += 1
+    return words
+
 
 dict = {"You are a coward and a scoundrel!" : "https://www.youtube.com/watch?v=wO9Ch3AHwRs",
             "Not bad. Not bad at all.": "https://www.youtube.com/watch?v=wBtKmgHWt64",
@@ -30,7 +46,7 @@ dict = {"You are a coward and a scoundrel!" : "https://www.youtube.com/watch?v=w
             "You're all about to have a real bad day!":"https://www.youtube.com/watch?v=gQvQ3AKdKuk",
             "Start prayin', boy!":"https://www.youtube.com/watch?v=q75VE8Vm_ic",
             "Don't worry, boys! The Engineer, is Engi-here!":"https://www.youtube.com/watch?v=aDuOk8COKPQ",
-            "I'm wolverine-mean, you son of a вιтcн.":"https://www.youtube.com/watch?v=ab-jPul8az8",
+            "I'm wolverine-mean, you son of a Bitch.":"https://www.youtube.com/watch?v=ab-jPul8az8",
             "Drunk on the battlefield ain't no way to be, son.":"https://www.youtube.com/watch?v=grXNneUkY7E",
             'Oh my God.':"https://www.youtube.com/watch?v=1Vv0Nph2UPA",
             "I'm gonna lay you out!":"https://www.youtube.com/watch?v=VMXT4Zcqm3I",
@@ -76,3 +92,6 @@ dict = {"You are a coward and a scoundrel!" : "https://www.youtube.com/watch?v=w
             'Nope!':"https://www.youtube.com/watch?v=O8uGgyT6KCQ",
             'Now just stop trying to mess with my contraptions!':"https://www.youtube.com/watch?v=dnKr4cPCd9o"
             }
+
+# txt = print_engineer_list()
+# print(txt)

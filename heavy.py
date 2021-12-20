@@ -1,4 +1,5 @@
 import random
+from typing import Text
 
 
 def get_heavy_quote(*arg):
@@ -11,10 +12,45 @@ def get_heavy_quote(*arg):
 def get_heavy_quote_url(quote):
     return dict[quote]
 
-def print_heavy_list():
-    keys = list(dict.keys())
-    for (i, item) in enumerate(keys, start = 0):
-        print(i, item)
+# def print_heavy_list():
+#     keys = list(dict.keys())
+#     for (i, item) in enumerate(keys, start = 0):
+#         print(i, item)
+
+def print_half_heavy_list():
+    num = 0
+    words = ""
+    keys1 = list(dict.keys())
+    actual_keys = keys1[:65]
+    for actual_key in actual_keys:
+        words += '['
+        word_num = str(num)
+        words += word_num
+        words += ']'
+        words += " "
+        words += actual_key
+        if num == 64:
+            pass
+        else:
+            words += '\n'
+        num += 1
+    return words
+
+def print_other_half_heavy_list():
+    num = 65
+    words = ""
+    keys2 = list(dict.keys())
+    actual_keys = keys2[65:]
+    for actual_key in actual_keys:
+        words += '['
+        word_num = str(num)
+        words += word_num
+        words += ']'
+        words += " "
+        words += actual_key
+        words += '\n'
+        num += 1
+    return words
 
 dict = {"Get behind me doctor!" : "https://www.youtube.com/watch?v=7duMsdAtrO8",
          "Little little man." : "https://www.youtube.com/watch?v=MG3v3_ahd3Q",
@@ -145,3 +181,9 @@ dict = {"Get behind me doctor!" : "https://www.youtube.com/watch?v=7duMsdAtrO8",
         }
 
 # print_heavy_list()
+
+# Text1 = print_half_heavy_list()
+# Text2 = print_other_half_heavy_list()
+
+# print(Text1)
+# print(Text2)

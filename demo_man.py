@@ -22,7 +22,9 @@ def print_half_demo_man_list():
     actual_keys = keys1[:35]
     for actual_key in actual_keys:
         word_num = str(num)
+        words += '['
         words += word_num
+        words += ']'
         words += " "
         words += actual_key
         if num == 34:
@@ -39,7 +41,9 @@ def print_other_half_demo_man_list():
     actual_keys = keys2[35:]
     for actual_key in actual_keys:
         word_num = str(num)
+        words += '['
         words += word_num
+        words += ']'
         words += " "
         words += actual_key
         words += '\n'
