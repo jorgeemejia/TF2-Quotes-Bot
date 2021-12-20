@@ -12,6 +12,7 @@ __TF2 Talks__ is a Discord bot that when prompted, writes and says a quote from 
 ![](images/tutorial4.PNG)
 ![](images/tutorial2.PNG)
 ![](images/tutorial3.PNG)
+![](images/tutorial5.PNG)
 
 
 # Installation
