@@ -74,7 +74,7 @@ dict = {"Get behind me doctor!" : "https://www.youtube.com/watch?v=7duMsdAtrO8",
          "Hmm. Is nice.":"https://www.youtube.com/watch?v=667s9MIafq0",
          "We must collect money.":"https://www.youtube.com/watch?v=3-BPefhuBjo",
          "I think you should fight someone much, much smaller.":"https://www.youtube.com/watch?v=16ikMQ_Vljg",
-         "До свидания!" :"https://www.youtube.com/watch?v=y8UcnG87Fhw",
+         "Good-Bye!" :"https://www.youtube.com/watch?v=y8UcnG87Fhw",
          "Dance or I crush you!":"https://www.youtube.com/watch?v=4n90SDfkgGo",
          "Hit me. I dare you." :"https://www.youtube.com/watch?v=GMCLCTvB45M",
          "I am very happy!":"https://www.youtube.com/watch?v=GmZ3rVB_mzU",
@@ -134,7 +134,7 @@ dict = {"Get behind me doctor!" : "https://www.youtube.com/watch?v=7duMsdAtrO8",
          'Medic!':"https://www.youtube.com/watch?v=zOUFI9T4_TA",
          'Entire team is babies!':"https://www.youtube.com/watch?v=wFGQXjlAXEg",
          'Sandwich and me going to beat your ass.':"https://www.youtube.com/watch?v=KaAJ4tj2C0A",
-         'Хорошо!':"https://www.youtube.com/watch?v=OlEfJAeJ5yw",
+         'Good!':"https://www.youtube.com/watch?v=OlEfJAeJ5yw",
           'Come, sing with me!':"https://www.youtube.com/watch?v=sq7JTNc4q54",
          'Pootis spencer here!':"https://www.youtube.com/watch?v=g857eh1wBCo",
          'Nom nom nom, om nom!':"https://www.youtube.com/watch?v=kO1Yq7n9zLU",
@@ -144,3 +144,4 @@ dict = {"Get behind me doctor!" : "https://www.youtube.com/watch?v=7duMsdAtrO8",
          "Stupid stupid stupid!":"https://www.youtube.com/watch?v=dRi_OPgICCA"
         }
 
+# print_heavy_list()

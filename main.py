@@ -10,7 +10,7 @@ import youtube_dl
 
 from scout import get_scout_quote_url, get_scout_quote
 from heavy import get_heavy_quote_url, get_heavy_quote
-from demo_man import get_demo_man_quote, get_demo_man_quote_url
+from demo_man import get_demo_man_quote, get_demo_man_quote_url, print_half_demo_man_list, print_other_half_demo_man_list
 from engineer import get_engineer_quote_url, get_engineer_quote
 from medic import get_medic_quote_url, get_medic_quote
 from pyro import get_pyro_quote_url, get_pyro_quote
@@ -430,9 +430,30 @@ async def spy(ctx, *arg: int):
                 os.rename(file, "audio.mp3")
         voice.play(discord.FFmpegPCMAudio("audio.mp3"))   
 
+@client.command()
+async def list (ctx, arg):
+    if arg == 'demo_man':
+        #word = print_demo_man_list()
+        first_half = print_half_demo_man_list()
+        second_half = print_other_half_demo_man_list()
+        await ctx.channel.send(first_half)
+        await ctx.channel.send(second_half)
+        #await ctx.channel.send('```demo_man```')
 
+# #     elif arg == 'engineer':
 
+# #     elif arg == 'heavy':
 
+# #     elif arg == 'medic':
+
+# #     elif arg == 'pyro':
+
+# #     elif arg == 'scout':
+
+##use for loop and concatenate everything + \n
+
+##can't print the list cause there's too many characters
+##prob better off sticking everything in help
     
 
 client.run(os.getenv('TOKEN'))

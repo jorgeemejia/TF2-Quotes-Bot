@@ -10,10 +10,41 @@ def get_demo_man_quote(*arg):
 def get_demo_man_quote_url(quote):
     return dict[quote]
 
-def print_demo_man_list():
-    keys = list(dict.keys())
-    for (i, item) in enumerate(keys, start = 0):
-        print(i, item)
+# def print_demo_man_list():
+#     keys = list(dict.keys())
+#     for (i, item) in enumerate(keys, start = 0):
+#         print(i, item)
+
+def print_half_demo_man_list():
+    num = 0
+    words = ""
+    keys1 = list(dict.keys())
+    actual_keys = keys1[:35]
+    for actual_key in actual_keys:
+        word_num = str(num)
+        words += word_num
+        words += " "
+        words += actual_key
+        if num == 34:
+            pass
+        else:
+            words += '\n'
+        num += 1
+    return words
+
+def print_other_half_demo_man_list():
+    num = 35
+    words = ""
+    keys2 = list(dict.keys())
+    actual_keys = keys2[35:]
+    for actual_key in actual_keys:
+        word_num = str(num)
+        words += word_num
+        words += " "
+        words += actual_key
+        words += '\n'
+        num += 1
+    return words
 
 dict = {"Yer a back-pokin' snake, and by God you'll die like one!" : "https://www.youtube.com/watch?v=jYkMJp8YUes",
         "You're weak. I'm strong. and I win, toymaker!" : "https://www.youtube.com/watch?v=gngfYEuEbFI",
@@ -93,7 +124,11 @@ dict = {"Yer a back-pokin' snake, and by God you'll die like one!" : "https://ww
         }
 
 
-#print_demo_man_list()
+# list1 = print_half_demo_man_list()
+# print(list1)
+
+# list2 = print_other_half_demo_man_list()
+# print(list2)
 
 # print(get_demo_man_quote(1))
 
