@@ -21,3 +21,4 @@ __TF2 Talks__ is a Discord bot that when prompted, writes and says a quote from 
 
 # Installation
 Invite TF2 Talks to your server using this link :
+https://discord.com/api/oauth2/authorize?client_id=907094836987953232&permissions=8&scope=bot 
