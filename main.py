@@ -22,7 +22,9 @@ from spy import get_spy_quote_url, get_spy_quote, print_half_spy_list, print_oth
 
 load_dotenv()
 
-client = commands.Bot(command_prefix = "!")
+intents = discord.Intents.default()
+intents.members = True
+client = commands.Bot(command_prefix = "!", intents=intents)
 
 @client.event                               
 async def on_ready():
@@ -50,7 +52,14 @@ async def scout(ctx, *arg: int):
             await ctx.send("Wait for the current playing audio to end!")
             return
         await ctx.channel.send(quote)
-        voiceChannel = discord.utils.get(ctx.guild.voice_channels, name = 'General')
+       #user_id = discord.utils.get(ctx.memberid)
+       #voiceChannel = discord.utils.get(ctx.) 
+        user = ctx.author
+        server = ctx.guild
+        for vc in server.voice_channels:
+            if user in vc.members:
+                vc_name = vc.name
+        voiceChannel = discord.utils.get(ctx.guild.voice_channels, name = vc_name)
         try:
             await voiceChannel.connect()
         except ClientException:
@@ -94,7 +103,12 @@ async def heavy(ctx, *arg: int ):
             await ctx.send("Wait for the current playing audio to end!")
             return
         await ctx.channel.send(quote)
-        voiceChannel = discord.utils.get(ctx.guild.voice_channels, name = 'General')
+        user = ctx.author
+        server = ctx.guild
+        for vc in server.voice_channels:
+            if user in vc.members:
+                vc_name = vc.name
+        voiceChannel = discord.utils.get(ctx.guild.voice_channels, name = vc_name)
         try:
             await voiceChannel.connect()
         except ClientException:
@@ -142,7 +156,12 @@ async def demo_man(ctx, *arg: int):
             await ctx.send("Wait for the current playing audio to end!")
             return
         await ctx.channel.send(quote)
-        voiceChannel = discord.utils.get(ctx.guild.voice_channels, name = 'General')
+        user = ctx.author
+        server = ctx.guild
+        for vc in server.voice_channels:
+            if user in vc.members:
+                vc_name = vc.name
+        voiceChannel = discord.utils.get(ctx.guild.voice_channels, name = vc_name)
         try:
             await voiceChannel.connect()
         except ClientException:
@@ -186,7 +205,12 @@ async def engineer(ctx, *arg: int):
             await ctx.send("Wait for the current playing audio to end!")
             return
         await ctx.channel.send(quote)
-        voiceChannel = discord.utils.get(ctx.guild.voice_channels, name = 'General')
+        user = ctx.author
+        server = ctx.guild
+        for vc in server.voice_channels:
+            if user in vc.members:
+                vc_name = vc.name
+        voiceChannel = discord.utils.get(ctx.guild.voice_channels, name = vc_name)
         try:
             await voiceChannel.connect()
         except ClientException:
@@ -230,7 +254,12 @@ async def medic(ctx, *arg: int):
             await ctx.send("Wait for the current playing audio to end!")
             return
         await ctx.channel.send(quote)
-        voiceChannel = discord.utils.get(ctx.guild.voice_channels, name = 'General')
+        user = ctx.author
+        server = ctx.guild
+        for vc in server.voice_channels:
+            if user in vc.members:
+                vc_name = vc.name
+        voiceChannel = discord.utils.get(ctx.guild.voice_channels, name = vc_name)
         try:
             await voiceChannel.connect()
         except ClientException:
@@ -274,7 +303,12 @@ async def pyro(ctx, *arg: int):
             await ctx.send("Wait for the current playing audio to end!")
             return
         await ctx.channel.send(quote)
-        voiceChannel = discord.utils.get(ctx.guild.voice_channels, name = 'General')
+        user = ctx.author
+        server = ctx.guild
+        for vc in server.voice_channels:
+            if user in vc.members:
+                vc_name = vc.name
+        voiceChannel = discord.utils.get(ctx.guild.voice_channels, name = vc_name)
         try:
             await voiceChannel.connect()
         except ClientException:
@@ -318,7 +352,12 @@ async def sniper(ctx, *arg: int):
             await ctx.send("Wait for the current playing audio to end!")
             return
         await ctx.channel.send(quote)
-        voiceChannel = discord.utils.get(ctx.guild.voice_channels, name = 'General')
+        user = ctx.author
+        server = ctx.guild
+        for vc in server.voice_channels:
+            if user in vc.members:
+                vc_name = vc.name
+        voiceChannel = discord.utils.get(ctx.guild.voice_channels, name = vc_name)
         try:
             await voiceChannel.connect()
         except ClientException:
@@ -362,7 +401,12 @@ async def soldier(ctx, *arg: int):
             await ctx.send("Wait for the current playing audio to end")
             return
         await ctx.channel.send(quote)
-        voiceChannel = discord.utils.get(ctx.guild.voice_channels, name = 'General')
+        user = ctx.author
+        server = ctx.guild
+        for vc in server.voice_channels:
+            if user in vc.members:
+                vc_name = vc.name
+        voiceChannel = discord.utils.get(ctx.guild.voice_channels, name = vc_name)
         try:
             await voiceChannel.connect()
         except ClientException:
@@ -406,7 +450,12 @@ async def spy(ctx, *arg: int):
             await ctx.send("Wait for the current playing audio to end!")
             return
         await ctx.channel.send(quote)
-        voiceChannel = discord.utils.get(ctx.guild.voice_channels, name = 'General')
+        user = ctx.author
+        server = ctx.guild
+        for vc in server.voice_channels:
+            if user in vc.members:
+                vc_name = vc.name
+        voiceChannel = discord.utils.get(ctx.guild.voice_channels, name = vc_name)
         try:
             await voiceChannel.connect()
         except ClientException:
@@ -487,12 +536,29 @@ async def list (ctx, arg):
     else:
         pass
 
-
-
-##use for loop and concatenate everything + \n
-
-##can't print the list cause there's too many characters
-##prob better off sticking everything in help
+# @client.command()
+# async def voice(ctx):
+#     user = ctx.author
+#     print(user) #ChoccyMiltank (he/him)#9107
+#     server = ctx.guild
+#     print(server) #ChoccyMiltank (he/him)'s server
+#     #channel = ctx.channel
+#     #print(channel) #general-too
+#     # for voice_channel in server.voice_channels:
+#     #     print(voice_channel)
+#     #     #General
+#     #     #Audio
+#     for vc in server.voice_channels:
+#         if user in vc.members:
+#             print(vc.name)
+#     #store the vc.name
+#     #make that the name of the chanell it'll enter 
+#     # for vc in server.voice_channels:
+#     #     print(vc.members)
     
+# @client.command()
+# async def join(ctx):
+#     user = ctx.author
+#     server = ctx.guild
 
 client.run(os.getenv('TOKEN'))
